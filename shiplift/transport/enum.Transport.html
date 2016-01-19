@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Transport` enum in crate `shiplift`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Transport">
+
+    <title>shiplift::transport::Transport - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>shiplift</a>::<wbr><a href='index.html'>transport</a></p><script>window.sidebarCurrent = {name: 'Transport', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>shiplift</a>::<wbr><a href='index.html'>transport</a>::<wbr><a class='enum' href=''>Transport</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-2743' class='srclink' href='../../src/shiplift/transport.rs.html#25-36' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Transport {
+    Tcp {
+        client: <a class='struct' href='https://hyperium.github.io/hyper/hyper/client/struct.Client.html' title='hyper::client::Client'>Client</a>,
+        host: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    },
+    Unix {
+        client: <a class='struct' href='https://hyperium.github.io/hyper/hyper/client/struct.Client.html' title='hyper::client::Client'>Client</a>,
+        path: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    },
+}</pre><div class='docblock'><p>Transports are types which define the means of communication
+with the docker daemon</p>
+</div><h2 class='variants'>Variants</h2>
+<table><tr><td id='variant.Tcp'><code>Tcp</code></td><td><div class='docblock'><p>A network tcp interface</p>
+</div><h3 class='fields'>Fields</h3>
+
+                                              <table><tr><td id='variant.Tcp.field.client'><code>client</code></td><td></td></tr><tr><td id='variant.Tcp.field.host'><code>host</code></td><td></td></tr></table></td></tr><tr><td id='variant.Unix'><code>Unix</code></td><td><div class='docblock'><p>A Unix domain socket</p>
+</div><h3 class='fields'>Fields</h3>
+
+                                              <table><tr><td id='variant.Unix.field.client'><code>client</code></td><td></td></tr><tr><td id='variant.Unix.field.path'><code>path</code></td><td></td></tr></table></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='enum' href='../../shiplift/transport/enum.Transport.html' title='shiplift::transport::Transport'>Transport</a></code></h3><div class='impl-items'><h4 id='method.request' class='method'><code>fn <a href='#method.request' class='fnname'>request</a>&lt;'a, B&gt;(&amp;'a self, method: <a class='enum' href='https://hyperium.github.io/hyper/hyper/method/enum.Method.html' title='hyper::method::Method'>Method</a>, endpoint: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, body: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(B, <a class='struct' href='https://hyperium.github.io/hyper/hyper/header/common/content_type/struct.ContentType.html' title='hyper::header::common::content_type::ContentType'>ContentType</a>)</a>&gt;) -&gt; <a class='type' href='../../shiplift/type.Result.html' title='shiplift::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt; <span class='where'>where B: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='enum' href='https://hyperium.github.io/hyper/hyper/client/enum.Body.html' title='hyper::client::Body'>Body</a>&lt;'a&gt;&gt;</span></code></h4>
+<h4 id='method.stream' class='method'><code>fn <a href='#method.stream' class='fnname'>stream</a>&lt;'c, B&gt;(&amp;'c self, method: <a class='enum' href='https://hyperium.github.io/hyper/hyper/method/enum.Method.html' title='hyper::method::Method'>Method</a>, endpoint: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, body: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(B, <a class='struct' href='https://hyperium.github.io/hyper/hyper/header/common/content_type/struct.ContentType.html' title='hyper::header::common::content_type::ContentType'>ContentType</a>)</a>&gt;) -&gt; <a class='type' href='../../shiplift/type.Result.html' title='shiplift::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a>&gt;&gt; <span class='where'>where B: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='enum' href='https://hyperium.github.io/hyper/hyper/client/enum.Body.html' title='hyper::client::Body'>Body</a>&lt;'c&gt;&gt;</span></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../shiplift/transport/enum.Transport.html' title='shiplift::transport::Transport'>Transport</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "shiplift";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BuildOptionsBuilder` struct in crate `shiplift`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BuildOptionsBuilder">
+
+    <title>shiplift::builder::BuildOptionsBuilder - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>shiplift</a>::<wbr><a href='index.html'>builder</a></p><script>window.sidebarCurrent = {name: 'BuildOptionsBuilder', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>shiplift</a>::<wbr><a href='index.html'>builder</a>::<wbr><a class='struct' href=''>BuildOptionsBuilder</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-63' class='srclink' href='../../src/shiplift/builder.rs.html#99-102' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BuildOptionsBuilder {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;S&gt;(path: S) -&gt; <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a> <span class='where'>where S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</span></code></h4>
+<div class='docblock'><p>path is expected to be a file path to a directory containing a Dockerfile
+describing how to build a Docker image</p>
+</div><h4 id='method.dockerfile' class='method'><code>fn <a href='#method.dockerfile' class='fnname'>dockerfile</a>&lt;P&gt;(&amp;mut self, path: P) -&gt; &amp;mut <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a> <span class='where'>where P: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</span></code></h4>
+<div class='docblock'><p>set the name of the docker file. defaults to &quot;DockerFile&quot;</p>
+</div><h4 id='method.tag' class='method'><code>fn <a href='#method.tag' class='fnname'>tag</a>&lt;T&gt;(&amp;mut self, t: T) -&gt; &amp;mut <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a> <span class='where'>where T: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</span></code></h4>
+<div class='docblock'><p>tag this image with a name after building it</p>
+</div><h4 id='method.remote' class='method'><code>fn <a href='#method.remote' class='fnname'>remote</a>&lt;R&gt;(&amp;mut self, r: R) -&gt; &amp;mut <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a> <span class='where'>where R: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</span></code></h4>
+<h4 id='method.nocache' class='method'><code>fn <a href='#method.nocache' class='fnname'>nocache</a>&lt;R&gt;(&amp;mut self, nc: <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a></code></h4>
+<div class='docblock'><p>don&#39;t use the image cache when building image</p>
+</div><h4 id='method.rm' class='method'><code>fn <a href='#method.rm' class='fnname'>rm</a>(&amp;mut self, r: <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a></code></h4>
+<h4 id='method.forcerm' class='method'><code>fn <a href='#method.forcerm' class='fnname'>forcerm</a>(&amp;mut self, fr: <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; &amp;mut <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a></code></h4>
+<h4 id='method.build' class='method'><code>fn <a href='#method.build' class='fnname'>build</a>(&amp;self) -&gt; <a class='struct' href='../../shiplift/builder/struct.BuildOptions.html' title='shiplift::builder::BuildOptions'>BuildOptions</a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../shiplift/builder/struct.BuildOptionsBuilder.html' title='shiplift::builder::BuildOptionsBuilder'>BuildOptionsBuilder</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "shiplift";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
