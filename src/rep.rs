@@ -91,6 +91,7 @@ pub struct Mount {
 #[derive(Clone, Debug, RustcEncodable, RustcDecodable)]
 #[allow(non_snake_case)]
 pub struct State {
+    pub Dead: bool,
     pub Error: String,
     pub ExitCode: u64,
     pub FinishedAt: String,
@@ -100,6 +101,7 @@ pub struct State {
     pub Restarting: bool,
     pub Running: bool,
     pub StartedAt: String,
+    pub Status: String,
 }
 
 #[derive(Clone, Debug, RustcEncodable, RustcDecodable)]
